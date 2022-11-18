@@ -1,1 +1,19 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          api:
+            token-uri: http://localhost:8081/ouath2/token
+        registration:
+          api:
+            provider: api
+            authorization-grant-type: client_credentials
+            client-authentication-method: post
+            client-id: abcd-efgh-ijkl
+            client-secret: qwerty
 
+feign-client:
+  api:
+    name: api
+    url: http://localhost:8082/api
